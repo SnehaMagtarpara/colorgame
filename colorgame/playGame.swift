@@ -70,6 +70,7 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
    
     func showalert(title:String)
     {
+        updatehighscore()
         let  alert = UIAlertController(title: "Game Over\n", message:  "Score:\(score)\n High score:\(highscore)", preferredStyle: .alert)
     
         alert.addAction(UIAlertAction.init(title: "Restart", style: .default, handler: { _ in

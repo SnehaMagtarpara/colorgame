@@ -225,6 +225,16 @@
                                 <color key="progressTintColor" red="0.012085338120000001" green="0.45201098919999999" blue="0.50702673200000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" red="0.0031522531059999998" green="0.054852254689999998" blue="0.12856468560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I97-ik-47E">
+                                <rect key="frame" x="149" y="190" width="116" height="94"/>
+                                <color key="backgroundColor" red="0.0022374824620000002" green="0.56105345490000003" blue="0.61756694320000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="uAM-87-JXL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" red="0.0031442434989999999" green="0.076823495330000005" blue="0.1676756442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="14E-c4-IEa">
                                 <rect key="frame" x="20" y="432" width="374" height="387"/>
                                 <color key="backgroundColor" red="0.0031369442589999998" green="0.092769391830000006" blue="0.16767555479999999" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -264,16 +274,6 @@
                                     <outlet property="delegate" destination="ElY-ml-pdE" id="35X-hd-guG"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I97-ik-47E">
-                                <rect key="frame" x="149" y="190" width="116" height="94"/>
-                                <color key="backgroundColor" red="0.0022374824620000002" green="0.56105345490000003" blue="0.61756694320000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="94" id="uAM-87-JXL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <color key="textColor" red="0.0031442434989999999" green="0.076823495330000005" blue="0.1676756442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="p1O-gV-hzO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
