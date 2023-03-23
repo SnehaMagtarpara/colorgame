@@ -28,20 +28,11 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
         progressbar.progress = 0.0
         progress()
         highscore = UserDefaults.standard.integer(forKey: "highscore")
-        
-       // collectionView?.backgroundColor = .black
         colorArray = colorArray.shuffled()
         randomColor = colorArray.randomElement()!
         collectionView.reloadData()
-        //let highscore = UserDefaults.standard.integer(forKey: highscore)
-        //highscore = point
-       // updatehighscore()
         score = point
-     
-        highscore = score
-        self.updatehighscore()
-      
-
+       updatehighscore()
     }
     func updatehighscore()
     {
@@ -63,6 +54,7 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
             if self.progressbar.progress == 0.0
             {
                 self.time.invalidate()
+                self.updatehighscore()
                 self.showalert(title:"")
             }
         })
@@ -75,7 +67,6 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
     
         alert.addAction(UIAlertAction.init(title: "Restart", style: .default, handler: { _ in
             self.scoreLabel.text = "\( self.point -= self.point)"
-           // self.scoreLabel.text = "\(self.point = 0)"
             self.scoreLabel.text = "\(0)"
             self.progress()
             self.collectionView.reloadData()
@@ -115,7 +106,6 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)  {
         if colorArray[indexPath.row].nameColor == randomColor.nameColor
         {
-            //scoreLabel.text = point+=1
             point += 1
             scoreLabel.text = "\(point)"
             score = point
@@ -124,7 +114,6 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
             collectionView.reloadData()
             progress()
             timeCount = UserDefaults.standard.double(forKey: "second")
-            
         }
         else
         {
@@ -133,6 +122,7 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
           {
               //point -= 1
               score = point
+              UserDefaults.standard.set(highscore, forKey: "score")
           }
             scoreLabel.text = "\(score)"
         }
@@ -161,8 +151,6 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
         }
         return ""
     }
-
-
 }
 
 
