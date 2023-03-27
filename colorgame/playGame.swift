@@ -18,6 +18,11 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
     var freq = 0.1
     var randomColor = UIColor()
     var colorArray = [UIColor.red,UIColor.green,UIColor.gray,UIColor.cyan,UIColor.orange,UIColor.yellow,UIColor.purple,UIColor.brown,UIColor.blue]
+    var life = 1
+    
+    @IBOutlet weak var lifeLine3: UIImageView!
+    @IBOutlet weak var lifeLine2: UIImageView!
+    @IBOutlet weak var lifeLine1: UIImageView!
     @IBOutlet weak var guessWrongColorLabel: UILabel!
     @IBOutlet weak var linesLabel: UILabel!
     @IBOutlet weak var progressbar: UIProgressView!
@@ -117,14 +122,43 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
         }
         else
         {
-            showalert(title: "")
-          if point != 0
-          {
-              //point -= 1
-              score = point
-              UserDefaults.standard.set(highscore, forKey: "score")
-          }
-            scoreLabel.text = "\(score)"
+            if life == 1
+            {
+                lifeLine1.image = UIImage(systemName: "heart")
+                life += 1
+                randomColor = colorArray.randomElement()!
+                colorArray = colorArray.shuffled()
+                collectionView.reloadData()
+            }
+            else if life == 2
+            {
+                lifeLine2.image = UIImage(systemName: "heart")
+                life += 1
+                randomColor = colorArray.randomElement()!
+                colorArray = colorArray.shuffled()
+                collectionView.reloadData()
+            }
+            else if life == 3
+            {
+                lifeLine3.image = UIImage(systemName: "heart")
+                life += 1
+                randomColor = colorArray.randomElement()!
+                colorArray = colorArray.shuffled()
+                collectionView.reloadData()
+                showalert(title: "")
+            }
+            else
+            {
+                showalert(title: "")
+                         if point != 0
+                         {
+                             //point -= 1
+                             score = point
+                             UserDefaults.standard.set(highscore, forKey: "score")
+                         }
+                           scoreLabel.text = "\(score)"
+            }
+
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
