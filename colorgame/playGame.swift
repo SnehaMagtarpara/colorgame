@@ -8,13 +8,13 @@
 import UIKit
 
 class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-
+    
     
     var time = Timer()
     var timeCount : Double = UserDefaults.standard.double(forKey: "second")
     var point = 0
     var score = 0
-   var highscore = UserDefaults.standard.integer(forKey: "highscore")
+    var highscore = UserDefaults.standard.integer(forKey: "highscore")
     var freq = 0.1
     var randomColor = UIColor()
     var colorArray = [UIColor.red,UIColor.green,UIColor.gray,UIColor.cyan,UIColor.orange,UIColor.yellow,UIColor.purple,UIColor.brown,UIColor.blue]
@@ -24,7 +24,6 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
     @IBOutlet weak var lifeLine2: UIImageView!
     @IBOutlet weak var lifeLine1: UIImageView!
     @IBOutlet weak var guessWrongColorLabel: UILabel!
-    @IBOutlet weak var linesLabel: UILabel!
     @IBOutlet weak var progressbar: UIProgressView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -37,13 +36,15 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
         randomColor = colorArray.randomElement()!
         collectionView.reloadData()
         score = point
-       updatehighscore()
+        updatehighscore()
+        scoreLabel.layer.cornerRadius = 20
+        scoreLabel.layer.masksToBounds = true
     }
     func updatehighscore()
     {
         if  score > highscore
-         {
-         
+        {
+            
             highscore = score
             UserDefaults.standard.set(highscore, forKey: "highscore")
         }
@@ -64,12 +65,12 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
             }
         })
     }
-   
+    
     func showalert(title:String)
     {
         updatehighscore()
         let  alert = UIAlertController(title: "Game Over\n", message:  "Score:\(score)\n High score:\(highscore)", preferredStyle: .alert)
-    
+        
         alert.addAction(UIAlertAction.init(title: "Restart", style: .default, handler: { _ in
             self.scoreLabel.text = "\( self.point -= self.point)"
             self.scoreLabel.text = "\(0)"
@@ -150,25 +151,26 @@ class playGame: UIViewController,UICollectionViewDataSource,UICollectionViewDele
             else
             {
                 showalert(title: "")
-                         if point != 0
-                         {
-                             //point -= 1
-                             score = point
-                             UserDefaults.standard.set(highscore, forKey: "score")
-                         }
-                           scoreLabel.text = "\(score)"
+                if point != 0
+                {
+                    //point -= 1
+                    score = point
+                    UserDefaults.standard.set(highscore, forKey: "score")
+                }
+                scoreLabel.text = "\(score)"
             }
-
+            
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 110, height: 110)
+        let size = (collectionView.frame.width-14.1-40)/3
+        return CGSize(width: size, height: size)
     }
 }
-  extension UIColor
-  {
-      var nameColor: String
-      {
+extension UIColor
+{
+    var nameColor: String
+    {
         switch self
         {
         case UIColor.red : return "red"

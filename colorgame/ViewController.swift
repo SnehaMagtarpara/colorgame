@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     
     
     @IBOutlet weak var playButton: UIButton!
@@ -23,18 +23,18 @@ class ViewController: UIViewController {
         
     }
     @IBAction func playButtonAction(_ sender: UIButton) {
-      
-                var a : Float = 0.0
-                self.progressbar.progress = a
-                time = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { (timer) in
-                    a += 0.01
-                    self.progressbar.progress = a
-                    if self.progressbar.progress == 1.0
-                    {
-                       self.naviget()
-                        self.time.invalidate()
-                    }
-                })
+        
+        var a : Float = 0.0
+        self.progressbar.progress = a
+        time = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { (timer) in
+            a += 0.01
+            self.progressbar.progress = a
+            if self.progressbar.progress == 1.0
+            {
+                self.naviget()
+                self.time.invalidate()
+            }
+        })
     }
     func naviget()
     {

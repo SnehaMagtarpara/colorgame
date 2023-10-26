@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,21 +21,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="cf27b2e34efad9068f3849a614eebb0e-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="h7u-Pq-UdL">
-                                <rect key="frame" x="76" y="296" width="263" height="305"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="305" id="wAt-he-mNf"/>
-                                </constraints>
+                                <rect key="frame" x="75" y="300" width="264" height="305"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lyd-jV-eJN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8zF-lQ-LXz"/>
+                            <constraint firstItem="h7u-Pq-UdL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="J1w-bs-hnR"/>
                             <constraint firstItem="lyd-jV-eJN" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Mlc-1t-wJ9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h7u-Pq-UdL" secondAttribute="trailing" constant="75" id="gm2-sz-aVH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h7u-Pq-UdL" secondAttribute="bottom" constant="257" id="WKm-vx-9Ja"/>
+                            <constraint firstItem="h7u-Pq-UdL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="252" id="bh5-b9-ewI"/>
                             <constraint firstAttribute="trailing" secondItem="lyd-jV-eJN" secondAttribute="trailing" id="jIT-zv-OGx"/>
-                            <constraint firstItem="h7u-Pq-UdL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="oGs-Ad-ysD"/>
-                            <constraint firstItem="h7u-Pq-UdL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="252" id="y0m-Jl-xz1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h7u-Pq-UdL" secondAttribute="trailing" constant="75" id="qJz-Ou-Qvi"/>
                             <constraint firstAttribute="bottom" secondItem="lyd-jV-eJN" secondAttribute="bottom" id="yQK-Y6-VQE"/>
                         </constraints>
                     </view>
